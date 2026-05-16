@@ -1048,6 +1048,13 @@ body::before {
     background: rgba(74, 222, 128, 0.05);
 }
 
+.cert-info,
+.edu-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .cert-badge-icon {
     flex: 0 0 80px;
     height: 80px;
@@ -1083,6 +1090,7 @@ body::before {
 
 .verify-link {
     display: inline-block;
+    align-self: flex-end;
     margin-top: 1rem;
     color: var(--accent-primary);
     text-decoration: none;
@@ -1201,6 +1209,10 @@ body::before {
         flex-direction: column;
         text-align: center;
         padding: 1.5rem;
+    }
+
+    .verify-link {
+        align-self: center;
     }
 
     .edu-year {
