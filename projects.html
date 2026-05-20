@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Prem-emptive theme check to prevent flash
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <title>Featured Projects | Vijay Olety</title>
+    <meta name="description"
+        content="Explore the featured technical projects and open-source contributions of Vijay Olety.">
+    <meta name="keywords"
+        content="Vijay Olety projects, Open source, web architecture, AI, engineering">
+    <link rel="canonical" href="https://vijayolety.com/achievements.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vijayolety.com/achievements.html">
+    <meta property="og:title" content="Achievements | Vijay Olety">
+    <meta property="og:description"
+        content="A legacy of engineering excellence, strategic acquisitions, and industry-recognized innovation.">
+    <meta property="og:image" content="https://vijayolety.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vijayolety.com/achievements.html">
+    <meta property="twitter:title" content="Achievements | Vijay Olety">
+    <meta property="twitter:description"
+        content="A legacy of engineering excellence, strategic acquisitions, and industry-recognized innovation.">
+    <meta property="twitter:image" content="https://vijayolety.com/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="achievements-page">
+    <div class="grid-background"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vijay Olety<span class="dot">.</span></a>
+            <nav class="nav-menu">
+                <a href="about.html">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="achievements.html" class="active">Achievements</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="https://pristinecrap.com" target="_blank">Blog</a>
+                <a href="projects.html">Projects</a>
+                <a href="mailto:vijay.olety@gmail.com" class="nav-cta">Let's Talk</a>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="achievements-hero">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span class="badge-icon">💻</span>
+                    <span class="badge-text">Showcase</span>
+                </div>
+                <h1 class="hero-title fade-up">Featured <br><span class="gradient-text">Projects</span>.</h1>
+                <p class="hero-subtitle fade-up">A curated selection of my technical builds, and side projects.</p>
+            </div>
+        </section>
+
+        <!-- Featured Project: Portfolio Website -->
+        <section class="project-terminal-section reveal-on-scroll" style="padding: 2rem 0 6rem;">
+            <div class="container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <div class="control-dot dot-red"></div>
+                            <div class="control-dot dot-yellow"></div>
+                            <div class="control-dot dot-green"></div>
+                        </div>
+                        <div class="terminal-title">~/projects/vijayolety-portfolio</div>
+                    </div>
+                    
+                    <div class="terminal-body">
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3 (Variables/Grid)</span>
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">Zero Dependencies</span>
+                        </div>
+                        
+                        <h2 class="project-heading">Personal <span class="accent-text">Portfolio Website</span></h2>
+                        <p class="project-description">A premium, highly-responsive personal portfolio designed with a dark-mode first aesthetic ("Emerald Glow"). Built from the ground up without heavy frameworks to ensure maximum control, optimal performance, and perfect SEO scores.</p>
+                        
+                        <div class="code-stats">
+                            <p><span class="key">"architecture"</span>: <span class="string">"framework-less"</span>,</p>
+                            <p><span class="key">"performance_score"</span>: <span class="string">"100 (Core Web Vitals)"</span>,</p>
+                            <p><span class="key">"aesthetics"</span>: <span class="string">"emerald-glow-darkmode"</span>,</p>
+                            <p><span class="key">"dependencies"</span>: <span class="string">0</span></p>
+                        </div>
+                        
+                        <div class="terminal-actions">
+                            <a href="https://github.com/vijayolety/website" target="_blank" class="btn-command">
+                                ./view_repository.sh
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="contact">
+            <div class="container fade-up">
+                <div class="contact-card">
+                    <h2 class="contact-title">Let's build something <span class="accent-text">extraordinary</span>.</h2>
+                    <p class="contact-desc">Interested in collaborating on an open-source project or building a new product?</p>
+                    <div class="contact-actions">
+                        <a href="mailto:vijay.olety@gmail.com" class="btn btn-primary large">Get in Touch</a>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/vijayolety/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="#0077B5" style="vertical-align: middle; margin-right: 6px;">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>LinkedIn
+                            </a>
+                            <a href="https://pristinecrap.com" target="_blank">pristinecrap.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Vijay Olety. Driven by results.</p>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+        <span class="moon-icon">🌙</span>
+        <span class="sun-icon">☀️</span>
+    </button>
+    <script src="app.js"></script>
+</body>
+
+</html>
