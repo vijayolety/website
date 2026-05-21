@@ -76,43 +76,81 @@
             </div>
         </section>
 
-        <!-- Featured Project: Portfolio Website -->
-        <section class="project-terminal-section reveal-on-scroll" style="padding: 2rem 0 6rem;">
+        <!-- Projects Grid -->
+        <section class="projects-grid-section reveal-on-scroll">
             <div class="container">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <div class="terminal-controls">
-                            <div class="control-dot dot-red"></div>
-                            <div class="control-dot dot-yellow"></div>
-                            <div class="control-dot dot-green"></div>
+                <div class="projects-grid">
+
+                    <!-- Outreach AI (Featured / Full Width) -->
+                    <div class="terminal-window terminal-featured" style="border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/outreach-ai</div>
                         </div>
-                        <div class="terminal-title">~/projects/vijayolety-portfolio</div>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">GenAI</span>
+                                <span class="tech-tag">Multi-LLM</span>
+                                <span class="tech-tag">Prompt Engineering</span>
+                                <span class="tech-tag">Inngest</span>
+                                <span class="tech-tag">Node.js</span>
+								<span class="tech-tag">Tailwind CSS</span>
+								<span class="tech-tag">Miro</span>
+                            </div>
+                            <h2 class="project-heading">Outreach <span class="accent-text">AI</span></h2>
+                            <p class="project-description">A production-grade AI outreach engine that treats cold email like an engineering workflow: ingest leads, validate data, generate multi-provider LLM drafts, review with human approval gates, send through verified SMTP, track opens, detect replies over IMAP, and promote hot leads automatically.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"ai_providers"</span>: <span class="string">["Gemini", "OpenAI", "Groq", "Claude"]</span>,</p>
+                                <p><span class="key">"workflow"</span>: <span class="string">"draft -> review -> approve -> send -> track"</span>,</p>
+                                <p><span class="key">"ops_stack"</span>: <span class="string">["Prisma", "Postgres", "Inngest", "Nodemailer"]</span>,</p>
+                                <p><span class="key">"trust_layer"</span>: <span class="string">"rate limits + AES-256-GCM secrets"</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/outreach-ai" target="_blank" class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="terminal-body">
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3 (Variables/Grid)</span>
-                            <span class="tech-tag">Vanilla JS</span>
-                            <span class="tech-tag">Zero Dependencies</span>
+
+                    <!-- Portfolio Website -->
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/vijayolety-portfolio</div>
                         </div>
-                        
-                        <h2 class="project-heading">Personal <span class="accent-text">Portfolio Website</span></h2>
-                        <p class="project-description">A premium, highly-responsive personal portfolio designed with a dark-mode first aesthetic ("Emerald Glow"). Built from the ground up without heavy frameworks to ensure maximum control, optimal performance, and perfect SEO scores.</p>
-                        
-                        <div class="code-stats">
-                            <p><span class="key">"architecture"</span>: <span class="string">"framework-less"</span>,</p>
-                            <p><span class="key">"performance_score"</span>: <span class="string">"100 (Core Web Vitals)"</span>,</p>
-                            <p><span class="key">"aesthetics"</span>: <span class="string">"emerald-glow-darkmode"</span>,</p>
-                            <p><span class="key">"dependencies"</span>: <span class="string">0</span></p>
-                        </div>
-                        
-                        <div class="terminal-actions">
-                            <a href="https://github.com/vijayolety/website" target="_blank" class="btn-command">
-                                ./view_repository.sh
-                            </a>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Vanilla JS</span>
+                                <span class="tech-tag">SEO</span>
+                                <span class="tech-tag">Zero Dependencies</span>
+                            </div>
+                            <h2 class="project-heading">Personal <span class="accent-text">Portfolio</span></h2>
+                            <p class="project-description">A framework-less portfolio engineered for speed, clarity, and control. The site uses semantic HTML, shared CSS tokens, responsive grids, persistent theme switching, scroll-reveal motion, rich SEO metadata, and a lean DOM to tell my engineering story without shipping framework weight.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"architecture"</span>: <span class="string">"static-html + shared-css-system"</span>,</p>
+                                <p><span class="key">"design_system"</span>: <span class="string">"Emerald Glow tokens + responsive grids"</span>,</p>
+                                <p><span class="key">"runtime_js"</span>: <span class="string">"theme + nav + reveal + hover glow"</span>,</p>
+                                <p><span class="key">"dependency_budget"</span>: <span class="string">0</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/website" target="_blank" class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
