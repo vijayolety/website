@@ -14,8 +14,7 @@
     <title>Featured Projects | Vijay Olety</title>
     <meta name="description"
         content="Explore the featured technical projects and open-source contributions of Vijay Olety.">
-    <meta name="keywords"
-        content="Vijay Olety projects, Open source, web architecture, AI, engineering">
+    <meta name="keywords" content="Vijay Olety projects, Open source, web architecture, AI, engineering">
     <link rel="canonical" href="https://vijayolety.com/achievements.html">
 
     <!-- Open Graph / Facebook -->
@@ -80,8 +79,60 @@
             <div class="container">
                 <div class="projects-grid">
 
+                    <!-- ChromaCraft AI (Featured / Full Width) -->
+                    <div class="terminal-window terminal-featured"
+                        style="border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 30px rgba(167, 139, 250, 0.15);">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/chromacraft-ai</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">BullMQ</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Google GenAI</span>
+                                <span class="tech-tag">Stability AI</span>
+                                <span class="tech-tag">Prisma</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                            <h2 class="project-heading">ChromaCraft <span class="accent-text">AI</span></h2>
+                            <p class="project-description">An identity-preserving AI image pipeline that takes
+                                product photos and automatically generates high-quality marketing assets. The system
+                                takes a base image, removes the background, and uses a mix of traditional
+                                color-shifting, Stability AI, and Google Gemini to place the product into entirely new
+                                scenes while keeping its exact look intact. Before anything reaches the user, an
+                                automated AI agent checks the quality of each image using structural and visual metrics
+                                to make sure it looks perfect. The final output generates complete 12-variant color
+                                catalogs, 360° spin sequences, and compiled showcase videos, all ready to download in a
+                                single ZIP file.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"ai_stack"</span>: <span class="string">["google-genai",
+                                        "stability-ai", "rembg", "Pillow"]</span>,</p>
+                                <p><span class="key">"quality_metrics"</span>: <span class="string">["SSIM", "CLIP",
+                                        "DINOv2"]</span>,</p>
+                                <p><span class="key">"queue"</span>: <span class="string">"BullMQ + Redis → Node.js
+                                        orchestrator → Python subprocesses"</span>,</p>
+                                <p><span class="key">"outputs"</span>: <span class="string">["color-variants",
+                                        "catalog-grid", "360-spin", "mp4-video", "zip-export"]</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/chromacraft-ai" target="_blank"
+                                    class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Outreach AI (Featured / Full Width) -->
-                    <div class="terminal-window terminal-featured" style="border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);">
+                    <div class="terminal-window terminal-featured"
+                        style="border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
                                 <div class="control-dot dot-red"></div>
@@ -92,21 +143,34 @@
                         </div>
                         <div class="terminal-body">
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                                <span class="tech-tag">GenAI</span>
-                                <span class="tech-tag">Multi-LLM</span>
-                                <span class="tech-tag">Prompt Engineering</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">FastAPI</span>
                                 <span class="tech-tag">Inngest</span>
-                                <span class="tech-tag">Node.js</span>
-								<span class="tech-tag">Tailwind CSS</span>
-								<span class="tech-tag">Miro</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Prisma</span>
+                                <span class="tech-tag">Multi-LLM</span>
+                                <span class="tech-tag">NextAuth</span>
                             </div>
                             <h2 class="project-heading">Outreach <span class="accent-text">AI</span></h2>
-                            <p class="project-description">A production-grade AI outreach engine that treats cold email like an engineering workflow: ingest leads, validate data, generate multi-provider LLM drafts, review with human approval gates, send through verified SMTP, track opens, detect replies over IMAP, and promote hot leads automatically.</p>
+                            <p class="project-description">A smart AI outreach platform that handles everything from
+                                lead ingestion to automated follow-ups, with a human-in-the-loop safety net. It hooks
+                                into your CSVs or Google Sheets, intelligently cleans and validates the data, and uses a
+                                multi-model AI system (Gemini, OpenAI, Claude, and Groq) to write highly personalized
+                                emails. Nothing goes out without your approval. Once approved, a smart email delivery
+                                system sends the messages, tracks opens via a pixel, and monitors your inbox for
+                                replies. If a prospect responds positively, the system automatically flags them as a hot
+                                lead.</p>
                             <div class="code-stats">
-                                <p><span class="key">"ai_providers"</span>: <span class="string">["Gemini", "OpenAI", "Groq", "Claude"]</span>,</p>
-                                <p><span class="key">"workflow"</span>: <span class="string">"draft -> review -> approve -> send -> track"</span>,</p>
-                                <p><span class="key">"ops_stack"</span>: <span class="string">["Prisma", "Postgres", "Inngest", "Nodemailer"]</span>,</p>
-                                <p><span class="key">"trust_layer"</span>: <span class="string">"rate limits + AES-256-GCM secrets"</span></p>
+                                <p><span class="key">"ai_factory"</span>: <span class="string">["@google/genai",
+                                        "openai", "@anthropic-ai/sdk", "groq-sdk"]</span>,</p>
+                                <p><span class="key">"pipeline"</span>: <span class="string">"ingest → validate → draft
+                                        → review → send → track → triage"</span>,</p>
+                                <p><span class="key">"background_workers"</span>: <span
+                                        class="string">["generate-drafts", "send-sequence", "reply-detection",
+                                        "followups"]</span>,</p>
+                                <p><span class="key">"ops_stack"</span>: <span class="string">["Prisma ORM",
+                                        "PostgreSQL", "Inngest", "Nodemailer", "NextAuth"]</span></p>
                             </div>
                             <div class="terminal-actions">
                                 <a href="https://github.com/vijayolety/outreach-ai" target="_blank" class="btn-command">
@@ -116,7 +180,7 @@
                         </div>
                     </div>
 
-					<!-- GhostWriter AI -->
+                    <!-- GhostWriter AI -->
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-controls">
@@ -134,21 +198,29 @@
                                 <span class="tech-tag">Miro</span>
                             </div>
                             <h2 class="project-heading">Ghostwriter <span class="accent-text">AI</span></h2>
-                            <p class="project-description">An authentic, adaptive AI engineering collaborator designed to work alongside developers for content creation. Features semantic context management, real-time code history adaptation, and multi-turn conversation tracking to act as a grounded peer rather than a rigid assistant.</p>
+                            <p class="project-description">An authentic, adaptive AI engineering collaborator designed
+                                to work alongside developers for content creation. Features semantic context management,
+                                real-time code history adaptation, and multi-turn conversation tracking to act as a
+                                grounded peer rather than a rigid assistant.</p>
                             <div class="code-stats">
-                                <p><span class="key">"engine"</span>: <span class="string">"adaptive-context-parser"</span>,</p>
-                                <p><span class="key">"interaction_model"</span>: <span class="string">"empathy + technical-candor"</span>,</p>
-                                <p><span class="key">"token_optimization"</span>: <span class="string">"dynamic history windowing"</span>,</p>
-                                <p><span class="key">"target_latency"</span>: <span class="string">"< 200ms"</span></p>
+                                <p><span class="key">"engine"</span>: <span
+                                        class="string">"adaptive-context-parser"</span>,</p>
+                                <p><span class="key">"interaction_model"</span>: <span class="string">"empathy +
+                                        technical-candor"</span>,</p>
+                                <p><span class="key">"token_optimization"</span>: <span class="string">"dynamic history
+                                        windowing"</span>,</p>
+                                <p><span class="key">"target_latency"</span>: <span class="string">"< 200ms"</span>
+                                </p>
                             </div>
                             <div class="terminal-actions">
-                                <a href="https://github.com/vijayolety/ghostwriter-ai" target="_blank" class="btn-command">
+                                <a href="https://github.com/vijayolety/ghostwriter-ai" target="_blank"
+                                    class="btn-command">
                                     ./view_repository.sh
                                 </a>
                             </div>
                         </div>
                     </div>
-					
+
                     <!-- Portfolio Website -->
                     <div class="terminal-window">
                         <div class="terminal-header">
@@ -168,11 +240,17 @@
                                 <span class="tech-tag">Zero Dependencies</span>
                             </div>
                             <h2 class="project-heading">Personal <span class="accent-text">Portfolio</span></h2>
-                            <p class="project-description">A framework-less portfolio engineered for speed, clarity, and control. The site uses semantic HTML, shared CSS tokens, responsive grids, persistent theme switching, scroll-reveal motion, rich SEO metadata, and a lean DOM to tell my engineering story without shipping framework weight.</p>
+                            <p class="project-description">A framework-less portfolio engineered for speed, clarity, and
+                                control. The site uses semantic HTML, shared CSS tokens, responsive grids, persistent
+                                theme switching, scroll-reveal motion, rich SEO metadata, and a lean DOM to tell my
+                                engineering story without shipping framework weight.</p>
                             <div class="code-stats">
-                                <p><span class="key">"architecture"</span>: <span class="string">"static-html + shared-css-system"</span>,</p>
-                                <p><span class="key">"design_system"</span>: <span class="string">"Emerald Glow tokens + responsive grids"</span>,</p>
-                                <p><span class="key">"runtime_js"</span>: <span class="string">"theme + nav + reveal + hover glow"</span>,</p>
+                                <p><span class="key">"architecture"</span>: <span class="string">"static-html +
+                                        shared-css-system"</span>,</p>
+                                <p><span class="key">"design_system"</span>: <span class="string">"Emerald Glow tokens +
+                                        responsive grids"</span>,</p>
+                                <p><span class="key">"runtime_js"</span>: <span class="string">"theme + nav + reveal +
+                                        hover glow"</span>,</p>
                                 <p><span class="key">"dependency_budget"</span>: <span class="string">0</span></p>
                             </div>
                             <div class="terminal-actions">
@@ -192,7 +270,8 @@
             <div class="container fade-up">
                 <div class="contact-card">
                     <h2 class="contact-title">Let's build something <span class="accent-text">extraordinary</span>.</h2>
-                    <p class="contact-desc">Interested in collaborating on an open-source project or building a new product?</p>
+                    <p class="contact-desc">Interested in collaborating on an open-source project or building a new
+                        product?</p>
                     <div class="contact-actions">
                         <a href="mailto:vijay.olety@gmail.com" class="btn btn-primary large">Get in Touch</a>
                         <div class="social-links">
