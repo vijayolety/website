@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Sweet 16!</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --emerald-dark: #022c22;
+            --emerald-light: #064e3b;
+            --emerald-accent: #10b981;
+            --silver: #e5e7eb;
+            --silver-glow: #9ca3af;
+            --wax-red: #991b1b;
+            --wax-red-light: #b91c1c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #4a0404, #7f1d1d, #4c0519, #7f1d1d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--silver);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(229, 231, 235, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .romantic-lights {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .light {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        .light:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+        .light:nth-child(2) { top: 60%; left: 80%; animation-duration: 15s; animation-delay: -2s; }
+        .light:nth-child(3) { top: 80%; left: 10%; animation-duration: 10s; animation-delay: -5s; }
+        .light:nth-child(4) { top: 30%; left: 60%; animation-duration: 14s; animation-delay: -7s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-50px) scale(1.5); }
+        }
+
+        /* Buttons */
+        button {
+            background: transparent;
+            color: var(--silver);
+            border: 2px solid var(--silver);
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(229, 231, 235, 0.1);
+        }
+
+        button:hover {
+            background: var(--silver);
+            color: var(--emerald-dark);
+            box-shadow: 0 0 25px rgba(229, 231, 235, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Stage 1: Quiz */
+        .quiz-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(229, 231, 235, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .question {
+            display: none;
+        }
+
+        .question.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(229, 231, 235, 0.3);
+            text-align: left;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--silver);
+            transform: none;
+            box-shadow: none;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        input[type="text"] {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--silver);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(229, 231, 235, 0.5);
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-style: italic;
+            height: 24px;
+            color: #fca5a5;
+            text-align: center;
+        }
+
+        /* Stage 2: Wax Seals */
+        .seals-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .seal-envelope {
+            width: 200px;
+            height: 150px;
+            background: #fdfbf7;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .seal-envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 80px solid #f3f0e6;
+            z-index: 2;
+            transition: all 0.5s ease;
+            transform-origin: top;
+        }
+
+        .wax-seal {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, var(--wax-red-light), var(--wax-red));
+            border-radius: 50%;
+            top: 55px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .seal-envelope:hover .wax-seal {
+            transform: scale(1.1);
+        }
+
+        .seal-envelope.opened::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .seal-envelope.opened .wax-seal {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .envelope-content {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            background: #fff;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transition: all 0.5s ease;
+            transition-delay: 0.2s;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+
+        .seal-envelope.opened .envelope-content {
+            opacity: 1;
+            transform: translateY(-20px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            height: auto;
+            min-height: 150px;
+            z-index: 4;
+        }
+
+        #proceed-to-stage3 {
+            margin-top: 4rem;
+            display: none;
+        }
+
+        /* Stage 3: Silver Box */
+        .silver-box {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #f3f4f6, #9ca3af);
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 40px rgba(229, 231, 235, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .silver-box::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .silver-box::before {
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+
+        .silver-box:hover {
+            box-shadow: 0 0 60px rgba(229, 231, 235, 0.5), inset 0 0 30px rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        .silver-box.opened {
+            background: transparent;
+            box-shadow: none;
+            border: 2px dashed var(--silver);
+        }
+
+        .silver-box.opened::before,
+        .silver-box.opened::after {
+            display: none;
+        }
+
+        .final-message {
+            display: none;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .final-message h2 {
+            font-size: 2.5rem;
+            color: var(--emerald-accent);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Romantic Lights Background -->
+    <div class="romantic-lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active" style="z-index: 1;">
+        <h1>Happy 16th Anniversary!</h1>
+        <p>16 years of magic, memories, and a love that only grows stronger. Before you unlock your surprise, let's take
+            a quick walk down memory lane...</p>
+        <button onclick="startGame()">Let's Play</button>
+    </div>
+
+    <!-- Stage 1: Trivia -->
+    <div id="stage1" class="screen" style="z-index: 1;">
+        <h2>Our Journey</h2>
+        <p>Answer a few questions to prove your memory is as good as your smile.</p>
+
+        <div class="quiz-container">
+            <!-- Question 1 -->
+            <div class="question active" id="q1">
+                <h3>1. Where did we meet first?</h3>
+                <div class="options">
+                    <button class="option-btn" onclick="checkAnswer(1, false)">Vidyarthi Bhavan</button>
+                    <button class="option-btn" onclick="checkAnswer(1, false)">CTR</button>
+                    <button class="option-btn" onclick="checkAnswer(1, true)">Swathi Hotel</button>
+                    <button class="option-btn" onclick="checkAnswer(1, false)">Taj West End</button>
+                </div>
+                <div class="feedback" id="feedback1"></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" id="q2">
+                <h3>2. What did I give you on our second meet?</h3>
+                <div class="options">
+                    <button class="option-btn" onclick="checkAnswer(2, false)">A ring and chocolates</button>
+                    <button class="option-btn" onclick="checkAnswer(2, true)">Watch and bouquet</button>
+                    <button class="option-btn" onclick="checkAnswer(2, false)">A necklace and a teddy bear</button>
+                    <button class="option-btn" onclick="checkAnswer(2, false)">A book and a rose</button>
+                </div>
+                <div class="feedback" id="feedback2"></div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" id="q3">
+                <h3>3. Which was the first movie we saw?</h3>
+                <div class="input-group">
+                    <input type="text" id="q3-input" placeholder="Type the movie name here...">
+                    <button onclick="checkQ3()">Submit</button>
+                </div>
+                <div class="feedback" id="feedback3"></div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" id="q4">
+                <h3>4. What was the price of 1 momo in a roadside stall on our honeymoon trip?</h3>
+                <div class="input-group">
+                    <input type="text" id="q4-input" placeholder="Type your answer...">
+                    <button onclick="checkQ4()">Submit</button>
+                </div>
+                <div class="feedback" id="feedback4"></div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" id="q5">
+                <h3>5. Final Question: Why did you say yes to me?</h3>
+                <div class="input-group">
+                    <input type="text" id="q5-input" placeholder="Type your answer...">
+                    <button onclick="checkQ5()">Submit</button>
+                </div>
+                <div class="feedback" id="feedback5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 2: Wax Seals -->
+    <div id="stage2" class="screen" style="z-index: 1;">
+        <h2>Sealed with Love</h2>
+        <p>Break the traditional wax seals to reveal some sweet memories.</p>
+
+        <div class="seals-container">
+            <div class="seal-envelope" onclick="openSeal(this)">
+                <div class="wax-seal">16</div>
+                <div class="envelope-content">
+                    "Sleep baby sleep.<br>Close your bright eyes.<br>And the moon is in the mountains."
+                </div>
+            </div>
+
+            <div class="seal-envelope" onclick="openSeal(this)">
+                <div class="wax-seal">16</div>
+                <div class="envelope-content">
+                    "I will join a startup again :)"
+                </div>
+            </div>
+
+            <div class="seal-envelope" onclick="openSeal(this)">
+                <div class="wax-seal">16</div>
+                <div class="envelope-content">
+                    "Love u lots.<br>Muaah, muaah, muaah!"
+                </div>
+            </div>
+        </div>
+
+        <button id="proceed-to-stage3" onclick="showStage3()">Unlock The Final Surprise</button>
+    </div>
+
+    <!-- Stage 3: Final Reveal -->
+    <div id="stage3" class="screen" style="z-index: 1;">
+        <h2>Your Surprise</h2>
+        <p>Tap the sealed box to reveal what awaits you.</p>
+
+        <div class="silver-box" id="gift-box" onclick="openGift()">
+            <!-- Box styling handled by CSS -->
+        </div>
+
+        <div class="final-message" id="final-msg">
+            <h2>You know what the gift is.</h2>
+            <p>Now... let the search begin!</p>
+            <p style="font-size: 3rem; margin-top: 1rem;">❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById('welcome-screen').classList.remove('active');
+            document.getElementById('stage1').classList.add('active');
+        }
+
+        function checkAnswer(questionNum, isCorrect) {
+            const feedback = document.getElementById('feedback' + questionNum);
+            if (isCorrect) {
+                feedback.style.color = '#4ade80';
+                feedback.innerText = "Correct! ❤️";
+                setTimeout(() => {
+                    document.getElementById('q' + questionNum).classList.remove('active');
+                    document.getElementById('q' + (questionNum + 1)).classList.add('active');
+                }, 1000);
+            } else {
+                feedback.style.color = '#fca5a5';
+                feedback.innerText = "Not quite... try again! 😉";
+            }
+        }
+
+        function checkQ3() {
+            const input = document.getElementById('q3-input').value.toLowerCase().trim();
+            const feedback = document.getElementById('feedback3');
+
+            // Accept variations of Date Night
+            if (input === 'date night' || input === 'datenight') {
+                feedback.style.color = '#4ade80';
+                feedback.innerText = "Perfect memory! ❤️";
+                setTimeout(() => {
+                    document.getElementById('q3').classList.remove('active');
+                    document.getElementById('q4').classList.add('active');
+                }, 1000);
+            } else {
+                feedback.style.color = '#fca5a5';
+                feedback.innerText = "Nope! Think harder... 😉";
+            }
+        }
+
+        function checkQ4() {
+            const input = document.getElementById('q4-input').value.toLowerCase().trim();
+            const feedback = document.getElementById('feedback4');
+            
+            if (input.includes('1') || input.includes('one')) {
+                feedback.style.color = '#4ade80';
+                feedback.innerText = "Yes! 1 rupee! Unbelievable, right? ❤️";
+                setTimeout(() => {
+                    document.getElementById('q4').classList.remove('active');
+                    document.getElementById('q5').classList.add('active');
+                }, 1500);
+            } else {
+                feedback.style.color = '#fca5a5';
+                feedback.innerText = "Nope! Try again! 😉";
+            }
+        }
+
+        function checkQ5() {
+            const input = document.getElementById('q5-input').value.toLowerCase().trim();
+            const feedback = document.getElementById('feedback5');
+            
+            // "LLM logic" simulation: looking for keywords
+            if (input.includes('hair') || input.includes('head') || input.includes('bald')) {
+                feedback.style.color = '#4ade80';
+                feedback.innerText = "Hahaha! Exactly! Because I had hair on my head! 😂❤️";
+                setTimeout(() => {
+                    document.getElementById('stage1').classList.remove('active');
+                    document.getElementById('stage2').classList.add('active');
+                }, 3000);
+            } else {
+                feedback.style.color = '#fca5a5';
+                feedback.innerText = "Is that the main reason? Be honest... 😜 (Hint: Look at my old photos)";
+            }
+        }
+
+        let openedSeals = 0;
+        function openSeal(element) {
+            if (!element.classList.contains('opened')) {
+                element.classList.add('opened');
+                openedSeals++;
+
+                if (openedSeals === 3) {
+                    setTimeout(() => {
+                        document.getElementById('proceed-to-stage3').style.display = 'block';
+                        document.getElementById('proceed-to-stage3').style.animation = 'fadeIn 1s ease-in-out';
+                    }, 1000);
+                }
+            }
+        }
+
+        function showStage3() {
+            document.getElementById('stage2').classList.remove('active');
+            document.getElementById('stage3').classList.add('active');
+        }
+
+        function openGift() {
+            const box = document.getElementById('gift-box');
+            if (!box.classList.contains('opened')) {
+                box.classList.add('opened');
+
+                // Add a little sparkle effect conceptually
+                setTimeout(() => {
+                    box.style.display = 'none';
+                    document.getElementById('final-msg').style.display = 'block';
+                }, 500);
+            }
+        }
+    </script>
+</body>
+
+</html>

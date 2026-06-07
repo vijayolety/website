@@ -340,6 +340,12 @@ body::before {
     color: var(--accent-primary);
 }
 
+.company-name {
+    color: var(--accent-primary);
+    font-weight: 800;
+    text-shadow: 0 0 18px rgba(74, 222, 128, 0.28);
+}
+
 .timeline {
     margin-top: 4rem;
     position: relative;
@@ -401,10 +407,16 @@ body::before {
 }
 
 .company {
-    color: var(--text-secondary);
+    display: inline-block;
+    color: var(--accent-primary);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 800;
     margin-bottom: 1rem;
+    padding: 0.18rem 0.7rem;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 999px;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.08);
 }
 
 .desc {
@@ -1126,8 +1138,9 @@ body::before {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 900;
     letter-spacing: 0.1em;
-    color: var(--text-primary);
-    opacity: 0.8;
+    color: var(--accent-primary);
+    opacity: 0.95;
+    text-shadow: 0 0 22px rgba(74, 222, 128, 0.35);
 }
 
 .achievements-grid-section {
