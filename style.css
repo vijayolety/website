@@ -2038,6 +2038,42 @@ body::before {
     padding: 4rem 0 8rem;
 }
 
+/* Category filter pills */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.filter-pill {
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-pill:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.filter-pill.active {
+    background: rgba(74, 222, 128, 0.12);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.projects-grid .terminal-window.hidden {
+    display: none;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

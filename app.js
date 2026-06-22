@@ -103,4 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Project category filter pills
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const projectCards = document.querySelectorAll('.projects-grid .terminal-window');
+
+    if (filterPills.length) {
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                const filter = pill.dataset.filter;
+                projectCards.forEach(card => {
+                    const categories = card.dataset.category || '';
+                    const visible = filter === 'all' || categories.split(' ').includes(filter);
+                    card.classList.toggle('hidden', !visible);
+                });
+            });
+        });
+    }
+
 });

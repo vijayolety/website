@@ -77,10 +77,16 @@
         <!-- Projects Grid -->
         <section class="projects-grid-section reveal-on-scroll">
             <div class="container">
+                <div class="project-filters">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="ai-ml">AI</button>
+                    <button class="filter-pill" data-filter="full-stack">Full-Stack</button>
+                    <button class="filter-pill" data-filter="frontend">Frontend</button>
+                </div>
                 <div class="projects-grid">
 
                     <!-- ContentStudio AI (Featured / Full Width) -->
-                    <div class="terminal-window terminal-featured"
+                    <div class="terminal-window terminal-featured" data-category="ai-ml full-stack"
                         style="border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
@@ -130,7 +136,7 @@
                     </div>
 
                     <!-- ChromaCraft AI -->
-                    <div class="terminal-window"
+                    <div class="terminal-window" data-category="ai-ml full-stack"
                         style="border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 30px rgba(167, 139, 250, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
@@ -181,7 +187,7 @@
                     </div>
 
                     <!-- Outreach AI -->
-                    <div class="terminal-window"
+                    <div class="terminal-window" data-category="ai-ml full-stack"
                         style="border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
@@ -231,7 +237,7 @@
                     </div>
 
                     <!-- GhostWriter AI -->
-                    <div class="terminal-window">
+                    <div class="terminal-window" data-category="ai-ml">
                         <div class="terminal-header">
                             <div class="terminal-controls">
                                 <div class="control-dot dot-red"></div>
@@ -272,7 +278,7 @@
                     </div>
 
                     <!-- Portfolio Website -->
-                    <div class="terminal-window">
+                    <div class="terminal-window" data-category="frontend">
                         <div class="terminal-header">
                             <div class="terminal-controls">
                                 <div class="control-dot dot-red"></div>
