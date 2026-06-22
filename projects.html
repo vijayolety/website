@@ -79,8 +79,58 @@
             <div class="container">
                 <div class="projects-grid">
 
-                    <!-- ChromaCraft AI (Featured / Full Width) -->
+                    <!-- ContentStudio AI (Featured / Full Width) -->
                     <div class="terminal-window terminal-featured"
+                        style="border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/contentstudio-ai</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">Next.js 16</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">LangGraph</span>
+                                <span class="tech-tag">Google Gemini</span>
+                                <span class="tech-tag">HeyGen</span>
+                                <span class="tech-tag">Celery</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Railway</span>
+                            </div>
+                            <h2 class="project-heading">ContentStudio <span class="accent-text">AI</span></h2>
+                            <p class="project-description">A guided, multi-stage pipeline that transforms a simple topic
+                                into a complete AI-generated video. Users submit content briefs and the system
+                                autonomously chains AI models through seven sequential stages — content generation with
+                                variation scoring, structured script development, scene-by-scene storyboard creation via
+                                LangGraph, avatar video synthesis with HeyGen, quality review, and final MP4 assembly —
+                                delivering a packaged, ready-to-publish video. A multi-provider AI gateway with
+                                automatic fallback routing, resumable pipeline checkpointing, and per-user encrypted API
+                                key storage keeps the pipeline resilient at every step.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"ai_stack"</span>: <span class="string">["google-gemini", "openai",
+                                        "anthropic", "heygen-v3"]</span>,</p>
+                                <p><span class="key">"pipeline"</span>: <span class="string">"brief → variations →
+                                        script → storyboard → avatar-video → review → mp4-export"</span>,</p>
+                                <p><span class="key">"orchestration"</span>: <span class="string">"LangGraph + Celery +
+                                        Redis → FastAPI → PostgreSQL checkpoints"</span>,</p>
+                                <p><span class="key">"features"</span>: <span class="string">["multi-provider fallback",
+                                        "resumable stages", "cost tracking", "team workspaces"]</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/contentstudio-ai" target="_blank"
+                                    class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ChromaCraft AI -->
+                    <div class="terminal-window"
                         style="border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 30px rgba(167, 139, 250, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
@@ -130,8 +180,8 @@
                         </div>
                     </div>
 
-                    <!-- Outreach AI (Featured / Full Width) -->
-                    <div class="terminal-window terminal-featured"
+                    <!-- Outreach AI -->
+                    <div class="terminal-window"
                         style="border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.15);">
                         <div class="terminal-header">
                             <div class="terminal-controls">
