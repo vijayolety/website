@@ -20,6 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Resume Dropdown
+    const navDropdown = document.querySelector('.nav-dropdown');
+    const navDropdownToggle = document.querySelector('.nav-dropdown-toggle');
+
+    if (navDropdown && navDropdownToggle) {
+        navDropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navDropdown.contains(e.target)) {
+                navDropdown.classList.remove('open');
+            }
+        });
+    }
+
     // Intersection Observer for scroll reveal animations
     const revealOptions = {
         threshold: 0.1,
