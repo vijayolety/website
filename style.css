@@ -194,7 +194,7 @@ body::before {
 
 /* Hero Section */
 .hero {
-    padding: 12rem 0 6rem;
+    padding: 12rem 0 3rem;
     text-align: center;
     position: relative;
 }
@@ -253,7 +253,7 @@ body::before {
     font-size: 1.25rem;
     color: var(--text-secondary);
     max-width: 700px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
 }
 
 .hero-btns {
@@ -294,7 +294,7 @@ body::before {
 
 /* Stats Strip */
 .stats-strip {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     background: var(--bg-card);
@@ -302,7 +302,7 @@ body::before {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
 }
 
