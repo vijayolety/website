@@ -642,6 +642,46 @@ body::before {
     height: 300px;
 }
 
+.bento-card--spotlight {
+    border-color: rgba(251, 191, 36, 0.4);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.15);
+}
+
+.bento-card--spotlight:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(251, 191, 36, 0.25);
+}
+
+.bento-card--spotlight .card-tag {
+    color: #fbbf24;
+}
+
+.bento-card--spotlight .card-bg-glow {
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+}
+
+.bento-card--spotlight:hover .card-bg-glow {
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+}
+
+.new-badge {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1a1a1a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.coined-phrase {
+    color: #fbbf24;
+}
+
 /* Contact Section */
 .contact {
     padding: 8rem 0;
