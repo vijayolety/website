@@ -175,7 +175,8 @@
                                         → index → retrieve → augment → generate"</span>,</p>
                                 <p><span class="key">"retrieval"</span>: <span class="string">"vector similarity
                                         search"</span>,</p>
-                                <p><span class="key">"goal"</span>: <span class="string">"source-grounded, low-hallucination
+                                <p><span class="key">"goal"</span>: <span class="string">"source-grounded,
+                                        low-hallucination
                                         answers"</span></p>
                             </div>
                             <div class="terminal-actions">
@@ -350,7 +351,6 @@
                             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
                                 <span class="tech-tag">Context Management</span>
                                 <span class="tech-tag">Adaptive UI</span>
-                                <span class="tech-tag">Node.js</span>
                                 <span class="tech-tag">Miro</span>
                             </div>
                             <h2 class="project-heading">Ghostwriter <span class="accent-text">AI</span></h2>
@@ -370,6 +370,53 @@
                             </div>
                             <div class="terminal-actions">
                                 <a href="https://github.com/vijayolety/ghostwriter-ai" target="_blank"
+                                    class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Support Workflow (n8n) -->
+                    <div class="terminal-window" data-category="ai-ml full-stack"
+                        style="border-color: rgba(236, 72, 153, 0.4); box-shadow: 0 0 30px rgba(236, 72, 153, 0.15);">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/cust-support-workflow-n8n</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">n8n</span>
+                                <span class="tech-tag">OpenAI</span>
+                                <span class="tech-tag">Pinecone</span>
+                                <span class="tech-tag">RAG</span>
+                                <span class="tech-tag">Gmail API</span>
+                            </div>
+                            <h2 class="project-heading"><span class="accent-text">n8n</span> Support
+                                Workflow</h2>
+                            <p class="project-description">A production-ready n8n workflow that automates customer
+                                support email handling end-to-end. Incoming Gmail messages are classified for intent
+                                and confidence, grounded against an approved Pinecone knowledge base via RAG, and
+                                answered with traceable citations - or escalated to a human whenever confidence is low
+                                or a sensitive issue is detected. Idempotency checks prevent duplicate replies, and
+                                audit logs capture every decision without storing email bodies, keeping the system
+                                safe, privacy-conscious, and fail-closed by design.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"pipeline"</span>: <span class="string">"normalize → idempotency
+                                        → classify → retrieve → generate → validate → send/escalate"</span>,</p>
+                                <p><span class="key">"grounding"</span>: <span class="string">"Pinecone + OpenAI
+                                        text-embedding-3-small"</span>,</p>
+                                <p><span class="key">"safety"</span>: <span class="string">["fail-closed escalation",
+                                        "citation validation", "no sensitive-data leakage"]</span>,</p>
+                                <p><span class="key">"principle"</span>: <span class="string">"never reply when it
+                                        cannot answer safely"</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/cust-support-workflow-n8n" target="_blank"
                                     class="btn-command">
                                     ./view_repository.sh
                                 </a>
