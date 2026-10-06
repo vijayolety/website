@@ -377,6 +377,50 @@
                         </div>
                     </div>
 
+                    <!-- GitHub MCP Server -->
+                    <div class="terminal-window" data-category="ai-ml"
+                        style="border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="control-dot dot-red"></div>
+                                <div class="control-dot dot-yellow"></div>
+                                <div class="control-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">~/projects/github-mcp-server</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">MCP</span>
+                                <span class="tech-tag">GitHub REST API</span>
+                            </div>
+                            <h2 class="project-heading">GitHub <span class="accent-text">MCP Server</span></h2>
+                            <p class="project-description">A read-only Model Context Protocol server written in Go
+                                that lets AI clients like Claude browse and query GitHub repositories
+                                programmatically — listing repos, pulling metadata, surfacing open issues, and
+                                viewing pull requests. Built with security front of mind: strict input validation
+                                against injection, bounded retries with exponential backoff, fine-grained
+                                read-only token scopes, and a strict policy of never logging or returning
+                                sensitive response bodies.</p>
+                            <div class="code-stats">
+                                <p><span class="key">"tools"</span>: <span class="string">["list_repositories",
+                                        "get_repository", "list_open_issues", "get_pull_requests"]</span>,</p>
+                                <p><span class="key">"transport"</span>: <span class="string">"MCP over
+                                        stdio"</span>,</p>
+                                <p><span class="key">"auth"</span>: <span class="string">"fine-grained PAT →
+                                        metadata + issues + PRs only"</span>,</p>
+                                <p><span class="key">"testing"</span>: <span class="string">["unit tests", "mock
+                                        GitHub server integration", "manual E2E"]</span></p>
+                            </div>
+                            <div class="terminal-actions">
+                                <a href="https://github.com/vijayolety/github-mcp-server" target="_blank"
+                                    class="btn-command">
+                                    ./view_repository.sh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Customer Support Workflow (n8n) -->
                     <div class="terminal-window" data-category="ai-ml full-stack"
                         style="border-color: rgba(236, 72, 153, 0.4); box-shadow: 0 0 30px rgba(236, 72, 153, 0.15);">
